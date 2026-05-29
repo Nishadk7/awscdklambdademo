@@ -1,5 +1,5 @@
 {
-  "app": "python app.py",
+  "app": "npx ts-node --prefer-ts-exts bin/rds-template.ts",
   "watch": {
     "include": [
       "**"
@@ -7,11 +7,13 @@
     "exclude": [
       "README.md",
       "cdk*.json",
-      "requirements*.txt",
-      "source.bat",
-      "**/__init__.py",
-      "**/__pycache__",
-      "tests"
+      "**/*.d.ts",
+      "**/*.js",
+      "tsconfig.json",
+      "package*.json",
+      "yarn.lock",
+      "node_modules",
+      "test"
     ]
   },
   "context": {
@@ -98,6 +100,7 @@
     "@aws-cdk/aws-ecs-patterns:uniqueTargetGroupId": true,
     "@aws-cdk/aws-route53-patterns:useDistribution": true,
     "@aws-cdk/aws-cloudfront:defaultFunctionRuntimeV2_0": true,
-    "@aws-cdk/aws-elasticloadbalancingv2:usePostQuantumTlsPolicy": true
+    "@aws-cdk/aws-elasticloadbalancingv2:usePostQuantumTlsPolicy": true,
+    "@aws-cdk/aws-batch:defaultToAL2023": true
   }
 }
